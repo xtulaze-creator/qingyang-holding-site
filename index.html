@@ -7,12 +7,58 @@
       name="description"
       content="宁波清扬控股有限公司，聚焦产业创新投资、央国企创新孵化、区域产业规划、科技成果转化、产业升级与产业出海。"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="清扬控股" />
+    <meta property="og:title" content="清扬控股｜产城生态发展服务中台" />
+    <meta
+      property="og:description"
+      content="连接产业、资本、人才与科技，构建面向未来的产城生态。"
+    />
+    <meta property="og:url" content="https://xtulaze-creator.github.io/qingyang-holding-site/" />
+    <meta
+      property="og:image"
+      content="https://xtulaze-creator.github.io/qingyang-holding-site/assets/qingyang-share.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="清扬控股产城生态发展服务中台" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="清扬控股｜产城生态发展服务中台" />
+    <meta
+      name="twitter:description"
+      content="连接产业、资本、人才与科技，构建面向未来的产城生态。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://xtulaze-creator.github.io/qingyang-holding-site/assets/qingyang-share.jpg"
+    />
     <meta name="theme-color" content="#f5f5f7" />
     <title>清扬控股｜产城生态发展服务中台</title>
+    <link rel="canonical" href="https://xtulaze-creator.github.io/qingyang-holding-site/" />
     <link rel="icon" type="image/png" href="assets/qingyang-logo.png" />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "宁波清扬控股有限公司",
+        "alternateName": "清扬控股",
+        "url": "https://xtulaze-creator.github.io/qingyang-holding-site/",
+        "logo": "https://xtulaze-creator.github.io/qingyang-holding-site/assets/qingyang-logo.png",
+        "telephone": "+86-139-5826-7705",
+        "description": "连接产业、资本、人才与科技，构建面向未来的产城生态。",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "宁波",
+          "addressCountry": "CN"
+        }
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
     <header class="site-header" data-header>
       <nav class="nav-shell" aria-label="主导航">
         <a class="brand" href="#top" aria-label="清扬控股首页">
@@ -20,22 +66,30 @@
           <span>清扬控股</span>
         </a>
 
-        <button class="menu-button" type="button" aria-label="打开菜单" aria-expanded="false" data-menu-button>
+        <button
+          class="menu-button"
+          type="button"
+          aria-label="打开菜单"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-menu-button
+        >
           <span></span>
           <span></span>
         </button>
 
-        <div class="nav-links" data-nav-links>
-          <a href="#about">关于清扬</a>
-          <a href="#services">业务平台</a>
-          <a href="#method">服务体系</a>
-          <a href="#cases">实践案例</a>
-          <a class="nav-contact" href="#contact">联系我们</a>
+        <div class="nav-links" id="site-navigation" data-nav-links>
+          <a href="#about" data-section-link>关于清扬</a>
+          <a href="#services" data-section-link>业务平台</a>
+          <a href="#method" data-section-link>服务体系</a>
+          <a href="#cases" data-section-link>实践案例</a>
+          <a class="nav-contact" href="#contact" data-section-link>联系我们</a>
         </div>
       </nav>
     </header>
 
-    <main id="top">
+    <main id="main-content" tabindex="-1">
+      <span id="top" aria-hidden="true"></span>
       <section class="hero" aria-labelledby="hero-title">
         <img
           class="hero-image"
@@ -111,33 +165,33 @@
 
           <div class="service-explorer reveal">
             <div class="service-tabs" role="tablist" aria-label="业务平台">
-              <button class="service-tab is-active" type="button" role="tab" aria-selected="true" data-service="0">
+              <button class="service-tab is-active" id="service-tab-0" type="button" role="tab" aria-selected="true" aria-controls="service-panel" tabindex="0" data-service="0">
                 <span>01</span>产业创新投资
               </button>
-              <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="1">
+              <button class="service-tab" id="service-tab-1" type="button" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="1">
                 <span>02</span>央国企创新孵化
               </button>
-              <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="2">
+              <button class="service-tab" id="service-tab-2" type="button" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="2">
                 <span>03</span>区域产业规划
               </button>
-              <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="3">
+              <button class="service-tab" id="service-tab-3" type="button" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="3">
                 <span>04</span>院所成果转化
               </button>
-              <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="4">
+              <button class="service-tab" id="service-tab-4" type="button" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="4">
                 <span>05</span>产业龙头 CVC
               </button>
-              <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="5">
+              <button class="service-tab" id="service-tab-5" type="button" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="5">
                 <span>06</span>产业集群整合
               </button>
-              <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="6">
+              <button class="service-tab" id="service-tab-6" type="button" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="6">
                 <span>07</span>企业六维升级
               </button>
-              <button class="service-tab" type="button" role="tab" aria-selected="false" data-service="7">
+              <button class="service-tab" id="service-tab-7" type="button" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-service="7">
                 <span>08</span>产业出海服务
               </button>
             </div>
 
-            <article class="service-panel" role="tabpanel" aria-live="polite">
+            <article class="service-panel" id="service-panel" role="tabpanel" aria-labelledby="service-tab-0" aria-live="polite" tabindex="0">
               <div class="service-visual">
                 <img data-service-image src="assets/chip-technology.jpg" alt="科技产业与芯片" />
                 <span class="service-index" data-service-index>01</span>

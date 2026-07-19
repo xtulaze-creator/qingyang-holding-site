@@ -84,6 +84,7 @@ const services = [
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const navLinks = document.querySelector("[data-nav-links]");
+const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
 const backToTop = document.querySelector("[data-back-to-top]");
 const servicePanel = document.querySelector(".service-panel");
 const tabs = [...document.querySelectorAll("[data-service]")];
@@ -93,11 +94,32 @@ const serviceKicker = document.querySelector("[data-service-kicker]");
 const serviceTitle = document.querySelector("[data-service-title]");
 const serviceDescription = document.querySelector("[data-service-description]");
 const serviceTags = document.querySelector("[data-service-tags]");
+let serviceChangeTimer;
+
+function syncActiveNavigation() {
+  const marker = window.innerHeight * 0.38;
+  let currentSection = "";
+
+  sectionLinks.forEach((link) => {
+    const section = document.querySelector(link.hash);
+    if (!section) return;
+    const bounds = section.getBoundingClientRect();
+    if (bounds.top <= marker && bounds.bottom >= marker) currentSection = section.id;
+  });
+
+  sectionLinks.forEach((link) => {
+    const isCurrent = link.hash === `#${currentSection}`;
+    link.classList.toggle("is-current", isCurrent);
+    if (isCurrent) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
 
 function syncHeader() {
   const scrolled = window.scrollY > 24;
   header.classList.toggle("is-scrolled", scrolled);
   backToTop.classList.toggle("is-visible", window.scrollY > 720);
+  syncActiveNavigation();
 }
 
 function closeMenu() {
@@ -123,39 +145,63 @@ navLinks.querySelectorAll("a").forEach((link) => link.addEventListener("click", 
 window.addEventListener("scroll", syncHeader, { passive: true });
 window.addEventListener("resize", () => {
   if (window.innerWidth > 960) closeMenu();
+  syncActiveNavigation();
 });
 
 backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
+function activateService(tab, moveFocus = false) {
+  const nextIndex = Number(tab.dataset.service);
+  const service = services[nextIndex];
+
+  tabs.forEach((item) => {
+    const selected = item === tab;
+    item.classList.toggle("is-active", selected);
+    item.setAttribute("aria-selected", String(selected));
+    item.tabIndex = selected ? 0 : -1;
+  });
+
+  servicePanel.setAttribute("aria-labelledby", tab.id);
+  servicePanel.classList.add("is-changing");
+  window.clearTimeout(serviceChangeTimer);
+
+  serviceChangeTimer = window.setTimeout(() => {
+    serviceImage.src = service.image;
+    serviceImage.alt = service.alt;
+    serviceIndex.textContent = service.index;
+    serviceKicker.textContent = service.kicker;
+    serviceTitle.textContent = service.title;
+    serviceDescription.textContent = service.description;
+    serviceTags.replaceChildren(
+      ...service.tags.map((tag) => {
+        const element = document.createElement("span");
+        element.textContent = tag;
+        return element;
+      }),
+    );
+    servicePanel.classList.remove("is-changing");
+  }, 180);
+
+  if (moveFocus) {
+    tab.focus({ preventScroll: true });
+    tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }
+}
+
 tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const nextIndex = Number(tab.dataset.service);
-    const service = services[nextIndex];
+  tab.addEventListener("click", () => activateService(tab));
+  tab.addEventListener("keydown", (event) => {
+    const currentIndex = tabs.indexOf(tab);
+    let targetIndex;
 
-    tabs.forEach((item) => {
-      const selected = item === tab;
-      item.classList.toggle("is-active", selected);
-      item.setAttribute("aria-selected", String(selected));
-    });
+    if (["ArrowRight", "ArrowDown"].includes(event.key)) targetIndex = (currentIndex + 1) % tabs.length;
+    if (["ArrowLeft", "ArrowUp"].includes(event.key)) targetIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    if (event.key === "Home") targetIndex = 0;
+    if (event.key === "End") targetIndex = tabs.length - 1;
+    if (targetIndex === undefined) return;
 
-    servicePanel.classList.add("is-changing");
-
-    window.setTimeout(() => {
-      serviceImage.src = service.image;
-      serviceImage.alt = service.alt;
-      serviceIndex.textContent = service.index;
-      serviceKicker.textContent = service.kicker;
-      serviceTitle.textContent = service.title;
-      serviceDescription.textContent = service.description;
-      serviceTags.replaceChildren(
-        ...service.tags.map((tag) => {
-          const element = document.createElement("span");
-          element.textContent = tag;
-          return element;
-        }),
-      );
-      servicePanel.classList.remove("is-changing");
-    }, 180);
+    event.preventDefault();
+    activateService(tabs[targetIndex], true);
   });
 });
 
