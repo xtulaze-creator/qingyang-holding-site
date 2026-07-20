@@ -138,6 +138,13 @@ p {
   height: 32px;
   object-fit: contain;
   object-position: 50% 28%;
+  filter: grayscale(1) brightness(0) invert(1);
+  transition: filter 240ms ease, opacity 180ms ease;
+}
+
+.site-header.is-scrolled .brand img,
+.site-header.is-open .brand img {
+  filter: grayscale(1) brightness(0);
 }
 
 .nav-links {
@@ -1106,6 +1113,13 @@ p {
   height: 34px;
   object-fit: contain;
   object-position: 50% 28%;
+  filter: grayscale(1) brightness(0);
+  opacity: 0.82;
+}
+
+.not-found-header .brand img {
+  filter: grayscale(1) brightness(0);
+  opacity: 0.88;
 }
 
 .footer-brand div {
