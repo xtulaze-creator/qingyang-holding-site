@@ -35,8 +35,8 @@ const services = [
     title: "院所创新能力转化平台",
     description:
       "聚焦市场真实需求，以项目主体、变现通道和产业伙伴为基础，让科研人才、试错资本与制造能力协同参与成果转化。",
-    image: "assets/advanced-manufacturing.jpg",
-    alt: "科技研发与先进制造",
+    image: "assets/technology-transfer-lab.jpg",
+    alt: "科研人员在实验室分析实验数据",
     tags: ["成果验证", "科研人才", "试错资本", "产业转化"],
   },
   {
@@ -55,8 +55,8 @@ const services = [
     title: "产业集群整合平台",
     description:
       "面向龙头企业和区域集群，连接一手核心资源，构建集采、集储、集融、集销、集研的一体化产业协同体系。",
-    image: "assets/industry-partnership.jpg",
-    alt: "产业链上下游合作",
+    image: "assets/industrial-cluster-logistics.jpg",
+    alt: "仓储与供应链协同作业",
     tags: ["核心资源", "集采平台", "供应链", "生态协同"],
   },
   {
@@ -75,8 +75,8 @@ const services = [
     title: "产业出海服务平台",
     description:
       "围绕新能源、电船、循环再制造、电解铝、物流、职业教育与基础设施，提供产业出海与全球资源协同服务。",
-    image: "assets/ningbo-skyline.jpg",
-    alt: "连接全球市场的现代产业城市",
+    image: "assets/global-port-logistics.jpg",
+    alt: "港口、集装箱与全球物流网络",
     tags: ["新能源出海", "全球物流", "职业教育", "基础设施"],
   },
 ];
