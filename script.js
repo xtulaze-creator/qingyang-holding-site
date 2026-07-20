@@ -81,6 +81,16 @@ const services = [
   },
 ];
 
+function preloadServiceImages() {
+  services.slice(1).forEach(({ image }) => {
+    const preload = new Image();
+    preload.decoding = "async";
+    preload.src = image;
+  });
+}
+
+window.addEventListener("load", preloadServiceImages, { once: true });
+
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
 const navLinks = document.querySelector("[data-nav-links]");
