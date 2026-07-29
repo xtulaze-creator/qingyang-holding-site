@@ -100,7 +100,6 @@ const footer = document.querySelector(".site-footer");
 const scrollProgress = document.querySelector("[data-scroll-progress]");
 const hero = document.querySelector("[data-hero]");
 const heroImage = document.querySelector("[data-hero-image]");
-const kineticTrack = document.querySelector("[data-kinetic-track]");
 const servicesSection = document.querySelector("[data-service-section]");
 const servicePanel = document.querySelector(".service-panel");
 const serviceVisual = document.querySelector("[data-service-visual]");
@@ -163,13 +162,6 @@ function syncScrollScene() {
   if (!reducedMotion.matches && hero && heroImage) {
     const heroProgress = Math.min(scrollY / Math.max(hero.offsetHeight, 1), 1);
     heroImage.style.transform = `translate3d(0, ${heroProgress * 6}%, 0) scale(${1.02 + heroProgress * 0.05})`;
-  }
-
-  if (!reducedMotion.matches && kineticTrack) {
-    const bounds = kineticTrack.parentElement.getBoundingClientRect();
-    const localProgress = (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height);
-    const clamped = Math.min(Math.max(localProgress, 0), 1);
-    kineticTrack.style.transform = `translate3d(${-clamped * 18}%, 0, 0)`;
   }
 
   if (!reducedMotion.matches) {
