@@ -1417,32 +1417,34 @@ p {
 }
 
 .sector-track {
-  width: max-content;
+  width: min(calc(100% - 2 * var(--side)), var(--max-width));
   min-height: 108px;
+  margin: 0 auto;
+  padding: 24px 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  animation: sector-drift 32s linear infinite;
-  will-change: transform;
+  justify-content: center;
+  column-gap: 30px;
+  row-gap: 16px;
 }
 
-.sector-group {
-  flex: none;
-  padding: 0 15px;
-  display: flex;
+.sector-item {
+  display: inline-flex;
   align-items: center;
-  gap: 30px;
-}
-
-.sector-track span {
-  font-size: 38px;
-  font-weight: 560;
-  line-height: 1;
+  gap: 14px;
   white-space: nowrap;
 }
 
+.sector-track span {
+  font-size: 30px;
+  font-weight: 560;
+  line-height: 1;
+}
+
 .sector-track svg {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   color: var(--sun);
 }
 
@@ -1784,12 +1786,6 @@ p {
   }
   50% {
     box-shadow: 0 0 0 30px rgba(20, 124, 229, 0.035);
-  }
-}
-
-@keyframes sector-drift {
-  to {
-    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -2425,21 +2421,23 @@ p {
   }
 
   .sector-track {
-    min-height: 98px;
+    min-height: 0;
+    padding: 24px 0;
+    column-gap: 16px;
+    row-gap: 14px;
   }
 
-  .sector-group {
-    padding: 0 10px;
-    gap: 20px;
+  .sector-item {
+    gap: 8px;
   }
 
   .sector-track span {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .sector-track svg {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
   }
 
   .contact-main {
