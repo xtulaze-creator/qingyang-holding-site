@@ -8,7 +8,8 @@
     <title>页面未找到｜清扬控股</title>
     <base href="https://xtulaze-creator.github.io/qingyang-holding-site/" />
     <link rel="icon" type="image/png" href="assets/qingyang-logo.png" />
-    <link rel="stylesheet" href="styles.css?v=20260720-2" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="styles.css?v=20260729-2" />
   </head>
   <body class="not-found-page">
     <header class="not-found-header">
@@ -16,7 +17,10 @@
         <img src="assets/qingyang-logo.png" alt="清扬控股标志" />
         <span>清扬控股</span>
       </a>
-      <a class="text-link" href="tel:13958267705">联系我们 <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="tel:13958267705">
+        联系我们
+        <i data-lucide="phone" aria-hidden="true"></i>
+      </a>
     </header>
 
     <main class="not-found-main">
@@ -25,8 +29,14 @@
         <h1>这里没有<br />你要找的页面。</h1>
         <p>链接可能已经更新。返回首页，继续了解清扬控股的产业创新、企业升级与出海服务。</p>
         <div class="not-found-actions">
-          <a class="button button-dark" href="./">返回首页 <span aria-hidden="true">↗</span></a>
-          <a class="button button-outline" href="tel:13958267705">联系清扬</a>
+          <a class="button button-dark" href="./">
+            返回首页
+            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a class="button button-outline" href="tel:13958267705">
+            联系清扬
+            <i data-lucide="phone" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
       <div class="not-found-visual">
@@ -36,7 +46,13 @@
 
     <footer class="not-found-footer">
       <span>宁波清扬控股有限公司</span>
-      <span>产业创新 · 产城融合 · 全球协同</span>
+      <span>产业创新 / 产城融合 / 全球协同</span>
     </footer>
+    <script defer src="assets/lucide.min.js?v=0.468.0"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        if (window.lucide) window.lucide.createIcons();
+      });
+    </script>
   </body>
 </html>
