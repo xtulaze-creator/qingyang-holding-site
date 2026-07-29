@@ -1419,12 +1419,18 @@ p {
 .sector-track {
   width: max-content;
   min-height: 108px;
-  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  animation: sector-drift 32s linear infinite;
+  will-change: transform;
+}
+
+.sector-group {
+  flex: none;
+  padding: 0 15px;
   display: flex;
   align-items: center;
   gap: 30px;
-  animation: sector-drift 34s linear infinite;
-  will-change: transform;
 }
 
 .sector-track span {
@@ -1783,7 +1789,7 @@ p {
 
 @keyframes sector-drift {
   to {
-    transform: translateX(-42%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -2420,6 +2426,10 @@ p {
 
   .sector-track {
     min-height: 98px;
+  }
+
+  .sector-group {
+    padding: 0 10px;
     gap: 20px;
   }
 
