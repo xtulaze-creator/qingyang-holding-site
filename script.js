@@ -8,7 +8,7 @@ const services = [
     image: "assets/chip-technology.jpg",
     alt: "科技产业与芯片",
     tags: ["新能源科技", "AI 与算力", "航空航天", "先进材料"],
-    accent: "#46f08c",
+    accent: "#147ce5",
   },
   {
     index: "02",
@@ -19,7 +19,7 @@ const services = [
     image: "assets/industry-partnership.jpg",
     alt: "产业伙伴协同合作",
     tags: ["需求挖掘", "人才匹配", "资本对接", "机制策划"],
-    accent: "#ffd249",
+    accent: "#147ce5",
   },
   {
     index: "03",
@@ -30,7 +30,7 @@ const services = [
     image: "assets/ningbo-city.jpg",
     alt: "现代城市与区域产业发展",
     tags: ["产业规划", "龙头培育", "生态招商", "重大项目"],
-    accent: "#ff6647",
+    accent: "#147ce5",
   },
   {
     index: "04",
@@ -41,7 +41,7 @@ const services = [
     image: "assets/technology-transfer-lab.jpg",
     alt: "科研人员在实验室分析实验数据",
     tags: ["成果验证", "科研人才", "试错资本", "产业转化"],
-    accent: "#74d8ff",
+    accent: "#147ce5",
   },
   {
     index: "05",
@@ -52,7 +52,7 @@ const services = [
     image: "assets/capital-services.jpg",
     alt: "资本市场与投资分析",
     tags: ["战略咨询", "赛道分析", "标的推荐", "回报测算"],
-    accent: "#ff9e5c",
+    accent: "#147ce5",
   },
   {
     index: "06",
@@ -63,7 +63,7 @@ const services = [
     image: "assets/industrial-cluster-logistics.jpg",
     alt: "仓储与供应链协同作业",
     tags: ["核心资源", "集采平台", "供应链", "生态协同"],
-    accent: "#c7ff63",
+    accent: "#147ce5",
   },
   {
     index: "07",
@@ -74,7 +74,7 @@ const services = [
     image: "assets/advanced-manufacturing.jpg",
     alt: "智能制造与企业升级",
     tags: ["资本创新", "订单增长", "智能制造", "人才组织"],
-    accent: "#b7a2ff",
+    accent: "#147ce5",
   },
   {
     index: "08",
@@ -85,7 +85,7 @@ const services = [
     image: "assets/global-port-logistics.jpg",
     alt: "港口、集装箱与全球物流网络",
     tags: ["新能源出海", "全球物流", "职业教育", "基础设施"],
-    accent: "#ff6f91",
+    accent: "#147ce5",
   },
 ];
 
@@ -451,7 +451,7 @@ function initializeNetworkCanvas() {
         context.beginPath();
         context.moveTo(node.x, node.y);
         context.lineTo(other.x, other.y);
-        context.strokeStyle = `rgba(70, 240, 140, ${(1 - distance / threshold) * 0.24})`;
+        context.strokeStyle = `rgba(116, 178, 255, ${(1 - distance / threshold) * 0.22})`;
         context.lineWidth = 0.75;
         context.stroke();
       }
@@ -459,7 +459,7 @@ function initializeNetworkCanvas() {
       const pulse = 0.72 + Math.sin(time * 0.0016 + node.phase) * 0.28;
       context.beginPath();
       context.arc(node.x, node.y, node.radius * pulse, 0, Math.PI * 2);
-      context.fillStyle = index % 8 === 0 ? "rgba(255, 210, 73, 0.88)" : "rgba(255, 255, 255, 0.62)";
+      context.fillStyle = index % 8 === 0 ? "rgba(126, 188, 255, 0.9)" : "rgba(255, 255, 255, 0.62)";
       context.fill();
     });
 

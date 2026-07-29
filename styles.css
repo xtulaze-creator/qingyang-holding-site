@@ -1,20 +1,20 @@
 :root {
-  --paper: #f4f3ef;
+  --paper: #f5f5f7;
   --surface: #ffffff;
-  --ink: #0a0b0c;
-  --ink-soft: #17191b;
-  --muted: #696a6d;
-  --line: rgba(10, 11, 12, 0.14);
-  --line-light: rgba(255, 255, 255, 0.18);
-  --electric: #46f08c;
-  --cobalt: #3867ff;
-  --sun: #ffd249;
-  --coral: #ff6647;
+  --ink: #1d1d1f;
+  --ink-soft: #101113;
+  --muted: #6e6e73;
+  --line: rgba(29, 29, 31, 0.13);
+  --line-light: rgba(255, 255, 255, 0.16);
+  --electric: #147ce5;
+  --cobalt: #147ce5;
+  --sun: #b28a55;
+  --coral: #111114;
   --max-width: 1360px;
   --side: max(28px, calc((100vw - var(--max-width)) / 2));
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --service-accent: var(--electric);
+  --service-accent: #147ce5;
 }
 
 * {
@@ -258,7 +258,7 @@ p {
 .nav-links .nav-contact {
   min-height: 38px;
   padding: 0 15px;
-  color: var(--ink);
+  color: #fff;
   border-radius: 4px;
   background: var(--electric);
   opacity: 1;
@@ -379,9 +379,9 @@ p {
 
 .hero-kicker {
   margin-bottom: 16px;
-  color: var(--electric);
+  color: rgba(190, 220, 255, 0.9);
   font-size: 13px;
-  font-weight: 720;
+  font-weight: 650;
 }
 
 .hero h1 {
@@ -390,15 +390,15 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0 0.11em;
-  font-size: 132px;
-  font-weight: 740;
-  line-height: 0.9;
+  font-size: 112px;
+  font-weight: 650;
+  line-height: 0.94;
   letter-spacing: 0;
 }
 
 .hero h1 span:last-child {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.82);
+  color: #fff;
+  -webkit-text-stroke: 0;
 }
 
 .hero-bottom {
@@ -450,6 +450,7 @@ p {
 
 .button-light:hover,
 .button-light:focus-visible {
+  color: #fff;
   background: var(--electric);
 }
 
@@ -460,7 +461,7 @@ p {
 
 .button-dark:hover,
 .button-dark:focus-visible {
-  color: var(--ink);
+  color: #fff;
   background: var(--electric);
 }
 
@@ -487,7 +488,7 @@ p {
 .circle-action:focus-visible,
 .hero-scroll:hover,
 .hero-scroll:focus-visible {
-  color: var(--ink);
+  color: #fff;
   border-color: var(--electric);
   background: var(--electric);
 }
@@ -516,8 +517,9 @@ p {
   min-height: 178px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  color: #fff;
-  background: var(--ink);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
 }
 
 .signal-item {
@@ -525,7 +527,7 @@ p {
   padding: 30px max(28px, calc((100vw - var(--max-width)) / 2 + 28px));
   display: grid;
   align-content: center;
-  border-right: 1px solid var(--line-light);
+  border-right: 1px solid var(--line);
 }
 
 .signal-item:first-child {
@@ -553,7 +555,7 @@ p {
 
 .signal-item > p {
   margin: 3px 0 0;
-  color: rgba(255, 255, 255, 0.56);
+  color: var(--muted);
   font-size: 13px;
 }
 
@@ -561,6 +563,8 @@ p {
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 22px;
+  color: #fff;
+  background: var(--ink-soft);
 }
 
 .signal-statement svg {
@@ -578,7 +582,7 @@ p {
 }
 
 .section {
-  padding: 150px 0;
+  padding: 136px 0;
 }
 
 .section-shell {
@@ -623,20 +627,11 @@ p {
 .intro {
   position: relative;
   overflow: hidden;
-  background: var(--paper);
+  background: var(--surface);
 }
 
 .intro::after {
-  content: "QY";
-  position: absolute;
-  z-index: 0;
-  right: -20px;
-  bottom: -110px;
-  color: rgba(10, 11, 12, 0.035);
-  font-size: 410px;
-  font-weight: 780;
-  line-height: 0.8;
-  pointer-events: none;
+  display: none;
 }
 
 .intro .section-shell {
@@ -645,40 +640,41 @@ p {
 }
 
 .intro-statement {
-  margin-top: 104px;
+  margin-top: 88px;
 }
 
 .intro-statement h2 {
   margin: 0;
-  font-size: 76px;
-  font-weight: 610;
-  line-height: 1.12;
+  max-width: 1140px;
+  font-size: 60px;
+  font-weight: 570;
+  line-height: 1.16;
 }
 
 .accent-word {
-  padding: 0 0.11em;
-  color: var(--ink);
-  background: var(--electric);
+  padding: 0;
+  color: var(--electric);
+  background: transparent;
 }
 
 .outline-word {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--ink);
+  color: var(--ink);
+  -webkit-text-stroke: 0;
 }
 
 .intro-detail {
-  margin-top: 108px;
+  margin-top: 88px;
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
-  gap: 110px;
+  gap: 82px;
   align-items: start;
 }
 
 .intro-deck {
   margin: 0;
-  font-size: 27px;
-  font-weight: 570;
-  line-height: 1.55;
+  font-size: 24px;
+  font-weight: 520;
+  line-height: 1.62;
 }
 
 .intro-columns {
@@ -697,12 +693,14 @@ p {
 .kinetic-band {
   overflow: hidden;
   color: var(--ink);
-  background: var(--sun);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
 }
 
 .kinetic-track {
   width: max-content;
-  min-height: 152px;
+  min-height: 116px;
   padding: 0 48px;
   display: flex;
   align-items: center;
@@ -711,8 +709,8 @@ p {
 }
 
 .kinetic-track span {
-  font-size: 72px;
-  font-weight: 690;
+  font-size: 54px;
+  font-weight: 560;
   line-height: 1;
   white-space: nowrap;
 }
@@ -720,11 +718,12 @@ p {
 .kinetic-track svg {
   width: 32px;
   height: 32px;
+  color: var(--electric);
 }
 
 .services {
   color: #fff;
-  background: var(--ink);
+  background: var(--ink-soft);
 }
 
 .services .section-index span {
@@ -746,9 +745,9 @@ p {
 .services-title h2,
 .cases-title h2 {
   margin: 0;
-  font-size: 84px;
-  font-weight: 650;
-  line-height: 1;
+  font-size: 68px;
+  font-weight: 590;
+  line-height: 1.04;
 }
 
 .service-progress {
@@ -831,7 +830,7 @@ p {
 }
 
 .service-tab.is-active {
-  color: var(--ink);
+  color: #fff;
   background: var(--service-accent);
 }
 
@@ -844,7 +843,7 @@ p {
   min-width: 0;
   display: grid;
   grid-template-rows: minmax(520px, 62vh) auto;
-  background: var(--paper);
+  background: var(--surface);
   outline: none;
 }
 
@@ -861,7 +860,7 @@ p {
   height: 112%;
   max-width: none;
   object-fit: cover;
-  filter: saturate(0.88) contrast(1.05);
+  filter: saturate(0.72) contrast(1.04);
   transform: translate3d(0, -5%, 0) scale(1.04);
   transition: opacity 280ms ease, clip-path 700ms var(--ease-out), transform 900ms var(--ease-out);
   clip-path: inset(0 0 0 0);
@@ -941,8 +940,8 @@ p {
 
 .service-content h3 {
   margin: 0;
-  font-size: 38px;
-  font-weight: 640;
+  font-size: 34px;
+  font-weight: 590;
   line-height: 1.2;
 }
 
@@ -974,7 +973,7 @@ p {
 
 .method {
   overflow: hidden;
-  background: #ecebe6;
+  background: var(--paper);
 }
 
 .method-layout {
@@ -989,9 +988,9 @@ p {
 .upgrade-copy h2,
 .contact-main h2 {
   margin: 0;
-  font-size: 76px;
-  font-weight: 640;
-  line-height: 1.08;
+  font-size: 64px;
+  font-weight: 580;
+  line-height: 1.12;
 }
 
 .method-copy > p {
@@ -1070,16 +1069,18 @@ p {
   left: 50%;
   width: 190px;
   height: 190px;
-  color: var(--ink);
-  background: var(--electric);
+  color: #fff;
+  border-color: var(--ink);
+  background: var(--ink);
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 18px rgba(70, 240, 140, 0.13);
+  box-shadow: 0 0 0 18px rgba(20, 124, 229, 0.09);
   animation: core-breathe 4s ease-in-out infinite;
 }
 
 .orbit-core svg {
   width: 34px;
   height: 34px;
+  color: #79baff;
 }
 
 .orbit-core span {
@@ -1097,7 +1098,7 @@ p {
   width: 112px;
   height: 112px;
   gap: 4px;
-  box-shadow: 0 12px 30px rgba(10, 11, 12, 0.08);
+  box-shadow: 0 10px 26px rgba(29, 29, 31, 0.06);
 }
 
 .orbit-node svg {
@@ -1133,15 +1134,15 @@ p {
 .upgrade {
   position: relative;
   overflow: hidden;
-  color: #fff;
-  background: var(--cobalt);
+  color: var(--ink);
+  background: #eef0f2;
 }
 
 .upgrade-number {
   position: absolute;
   top: 12px;
   right: -18px;
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(20, 124, 229, 0.07);
   font-size: 340px;
   font-weight: 780;
   line-height: 0.8;
@@ -1153,22 +1154,23 @@ p {
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
-  gap: 100px;
-  align-items: end;
+  gap: 88px;
+  align-items: start;
 }
 
 .upgrade-copy .section-index span {
-  color: var(--sun);
+  color: var(--electric);
 }
 
 .upgrade-copy h2 {
-  margin-top: 70px;
+  margin-top: 54px;
+  font-size: 54px;
 }
 
 .upgrade-copy > p {
   max-width: 560px;
   margin: 34px 0 0;
-  color: rgba(255, 255, 255, 0.68);
+  color: var(--muted);
   font-size: 17px;
   line-height: 1.9;
 }
@@ -1211,8 +1213,8 @@ p {
 
 .upgrade-media figcaption {
   padding: 10px 0 0;
-  color: rgba(255, 255, 255, 0.56);
-  background: var(--cobalt);
+  color: var(--muted);
+  background: transparent;
   font-size: 10px;
   font-weight: 680;
 }
@@ -1221,7 +1223,7 @@ p {
   margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  border-top: 1px solid rgba(255, 255, 255, 0.38);
+  border-top: 1px solid var(--line);
 }
 
 .upgrade-dimensions span {
@@ -1229,7 +1231,7 @@ p {
   padding: 17px 8px 0;
   display: grid;
   gap: 5px;
-  border-right: 1px solid rgba(255, 255, 255, 0.22);
+  border-right: 1px solid var(--line);
   font-size: 14px;
   font-weight: 620;
   text-align: center;
@@ -1240,7 +1242,7 @@ p {
 }
 
 .upgrade-dimensions small {
-  color: var(--sun);
+  color: var(--electric);
   font-size: 9px;
   font-weight: 720;
 }
@@ -1250,7 +1252,11 @@ p {
 }
 
 .cases-title {
-  margin-top: 76px;
+  margin-top: 66px;
+}
+
+.cases-title h2 {
+  font-size: 64px;
 }
 
 .case-stories {
@@ -1259,8 +1265,8 @@ p {
 }
 
 .case-story {
-  min-height: 720px;
-  padding: 80px 0;
+  min-height: 660px;
+  padding: 72px 0;
   display: grid;
   grid-template-columns: minmax(0, 1.28fr) minmax(330px, 0.72fr);
   grid-template-areas: "media copy";
@@ -1352,9 +1358,9 @@ p {
 
 .case-copy h3 {
   margin: 0;
-  font-size: 45px;
-  font-weight: 620;
-  line-height: 1.22;
+  font-size: 38px;
+  font-weight: 570;
+  line-height: 1.28;
 }
 
 .case-copy > p {
@@ -1387,13 +1393,13 @@ p {
 
 .sectors {
   overflow: hidden;
-  color: var(--ink);
+  color: #fff;
   background: var(--coral);
 }
 
 .sector-track {
   width: max-content;
-  min-height: 132px;
+  min-height: 108px;
   padding: 0 40px;
   display: flex;
   align-items: center;
@@ -1403,8 +1409,8 @@ p {
 }
 
 .sector-track span {
-  font-size: 46px;
-  font-weight: 650;
+  font-size: 38px;
+  font-weight: 560;
   line-height: 1;
   white-space: nowrap;
 }
@@ -1412,6 +1418,7 @@ p {
 .sector-track svg {
   width: 24px;
   height: 24px;
+  color: var(--sun);
 }
 
 .contact {
@@ -1444,7 +1451,7 @@ p {
 }
 
 .contact .section-index span {
-  color: var(--electric);
+  color: #79baff;
 }
 
 .contact .section-topline > p {
@@ -1452,7 +1459,7 @@ p {
 }
 
 .contact-main {
-  margin-top: 112px;
+  margin-top: 96px;
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
   gap: 100px;
@@ -1460,7 +1467,7 @@ p {
 }
 
 .contact-main h2 {
-  font-size: 82px;
+  font-size: 68px;
 }
 
 .contact-detail > p {
@@ -1478,7 +1485,7 @@ p {
   justify-content: space-between;
   gap: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.44);
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 560;
   line-height: 1.2;
   font-variant-numeric: tabular-nums;
@@ -1488,8 +1495,8 @@ p {
 
 .contact-phone:hover,
 .contact-phone:focus-visible {
-  color: var(--electric);
-  border-color: var(--electric);
+  color: #79baff;
+  border-color: #79baff;
 }
 
 .contact-phone svg {
@@ -1748,10 +1755,10 @@ p {
 @keyframes core-breathe {
   0%,
   100% {
-    box-shadow: 0 0 0 18px rgba(70, 240, 140, 0.13);
+    box-shadow: 0 0 0 18px rgba(20, 124, 229, 0.09);
   }
   50% {
-    box-shadow: 0 0 0 30px rgba(70, 240, 140, 0.04);
+    box-shadow: 0 0 0 30px rgba(20, 124, 229, 0.035);
   }
 }
 
@@ -1767,18 +1774,21 @@ p {
   }
 
   .hero h1 {
-    font-size: 108px;
+    font-size: 94px;
   }
 
   .intro-statement h2,
-  .method-copy h2,
+  .method-copy h2 {
+    font-size: 56px;
+  }
+
   .upgrade-copy h2 {
-    font-size: 64px;
+    font-size: 50px;
   }
 
   .services-title h2,
   .cases-title h2 {
-    font-size: 72px;
+    font-size: 60px;
   }
 
   .service-explorer {
@@ -1804,11 +1814,11 @@ p {
   }
 
   .case-copy h3 {
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .contact-main h2 {
-    font-size: 70px;
+    font-size: 60px;
   }
 
   .contact-phone {
@@ -1886,7 +1896,7 @@ p {
   }
 
   .hero h1 {
-    font-size: 92px;
+    font-size: 84px;
   }
 
   .hero-lead {
@@ -1907,7 +1917,7 @@ p {
   }
 
   .signal-item:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line-light);
+    border-bottom: 1px solid var(--line);
   }
 
   .section {
@@ -1915,7 +1925,7 @@ p {
   }
 
   .intro-statement h2 {
-    font-size: 58px;
+    font-size: 52px;
   }
 
   .intro-detail {
@@ -1932,7 +1942,7 @@ p {
   }
 
   .kinetic-track span {
-    font-size: 58px;
+    font-size: 48px;
   }
 
   .service-explorer {
@@ -2082,8 +2092,8 @@ p {
   .hero h1 {
     display: grid;
     gap: 2px;
-    font-size: 68px;
-    line-height: 0.92;
+    font-size: 60px;
+    line-height: 0.96;
   }
 
   .hero-bottom {
@@ -2161,8 +2171,8 @@ p {
   }
 
   .intro-statement h2 {
-    font-size: 39px;
-    line-height: 1.18;
+    font-size: 32px;
+    line-height: 1.22;
   }
 
   .intro-detail {
@@ -2186,7 +2196,7 @@ p {
   }
 
   .kinetic-track span {
-    font-size: 42px;
+    font-size: 36px;
   }
 
   .kinetic-track svg {
@@ -2201,7 +2211,7 @@ p {
 
   .services-title h2,
   .cases-title h2 {
-    font-size: 48px;
+    font-size: 42px;
   }
 
   .service-progress {
@@ -2249,9 +2259,12 @@ p {
     gap: 58px;
   }
 
-  .method-copy h2,
+  .method-copy h2 {
+    font-size: 40px;
+  }
+
   .upgrade-copy h2 {
-    font-size: 46px;
+    font-size: 35px;
   }
 
   .orbit-stage {
@@ -2261,7 +2274,7 @@ p {
   .orbit-core {
     width: 126px;
     height: 126px;
-    box-shadow: 0 0 0 12px rgba(70, 240, 140, 0.13);
+    box-shadow: 0 0 0 12px rgba(20, 124, 229, 0.09);
   }
 
   .orbit-core svg {
@@ -2315,7 +2328,7 @@ p {
 
   .upgrade-dimensions span {
     padding: 14px 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    border-bottom: 1px solid var(--line);
   }
 
   .upgrade-dimensions span:nth-child(3n) {
@@ -2354,7 +2367,7 @@ p {
   }
 
   .case-copy h3 {
-    font-size: 32px;
+    font-size: 29px;
   }
 
   .case-copy > p {
@@ -2367,7 +2380,7 @@ p {
   }
 
   .sector-track span {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .sector-track svg {
@@ -2381,7 +2394,7 @@ p {
   }
 
   .contact-main h2 {
-    font-size: 48px;
+    font-size: 40px;
   }
 
   .contact-phone {
